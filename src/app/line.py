@@ -4,7 +4,9 @@ from typing import Any
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI(servers=[{"url": os.environ["url"], "description": "testing"}])
+lineapi = os.environ["lineapi"]
+app = FastAPI()
+# servers=[{"url": os.environ["url"], "description": "testing"}])
 
 
 class message(BaseModel):
