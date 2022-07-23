@@ -1,0 +1,6 @@
+# python
+.venv
+poetry.lock
+
+# docker
+compose.yml
