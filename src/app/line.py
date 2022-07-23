@@ -9,6 +9,11 @@ app = FastAPI()
 # servers=[{"url": os.environ["url"], "description": "testing"}])
 
 
+@app.get("/health")
+def health_check():
+    return {"status": "OK"}
+
+
 class message(BaseModel):
     destination: str
     events: list[dict[str, Any]]
