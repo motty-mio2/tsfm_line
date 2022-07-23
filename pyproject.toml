@@ -8,6 +8,7 @@ authors = ["motty.mio2 <motty.mio2@gmail.com>"]
 python = "^3.9"
 fastapi = "^0.79.0"
 SQLAlchemy = "^1.4.39"
+uvicorn = "^0.18.2"
 
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"
