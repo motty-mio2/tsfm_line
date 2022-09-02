@@ -1,7 +1,9 @@
+import os
 from typing import Any
-from pydantic import BaseModel
+
 import uvicorn
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 from app import line
 
@@ -28,5 +30,4 @@ def webhook(item: message) -> str:
 
 
 if __name__ == "__main__":
-
-    uvicorn.run(app="main:app", host="0.0.0.0", port=5000, reload=True)  # type:ignore
+    uvicorn.run(app="main:app", host="0.0.0.0", port=int(os.environ["PORT"]), reload=True)  # type:ignore

@@ -4,10 +4,15 @@ services:
     api:
         build : Dockerfile
         conrainer_name: lineapi
-        command:
+        volumes:
+            - ./src:/src/src
+        ports:
+            - 5000:5000
         environment:
+            - TZ=Asia/Tokyo
             - lineapi=
             - url=
+        command: "python src/main.py"
     db:
         image: postgres:14
         container_name: postgres
@@ -15,5 +20,7 @@ services:
             - 5432:5432
         volumes:
             - ./db-store:/var/lib/postgresql/data
+        environment:
+            - TZ=Asia/Tokyo
 
 volumes:
